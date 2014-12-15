@@ -1,0 +1,48 @@
+<div class="sidebar">
+
+  <div class="sidebar-about">
+      <h1>
+        <a href="{{ site.baseurl }}">
+          {{ site.title }}
+        </a>
+        <hr>
+      </h1>
+      <p class="lead">{{ site.description }}</p>
+
+  </div>
+
+  <div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+    </nav>
+    
+  </div>
+
+    <div>
+
+     <a href="mailto:{{ site.email }}"><img class="contact-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNODUuOSwyMC4ySDE0LjFjLTEuNCwwLTIuNiwxLjEtMi42LDIuNnY1LjFjMCwwLjIsMC4zLDAuNSwwLjUsMC42bDM3LjgsMjEuNmMwLjEsMC4xLDAuMiwwLjEsMC4zLDAuMQ0KCQljMC4xLDAsMC4yLDAsMC4zLTAuMUw4NywyOC41YzAuMi0wLjEsMC44LTAuNCwxLTAuNmMwLjItMC4yLDAuNS0wLjMsMC41LTAuNnYtNC42Qzg4LjUsMjEuMyw4Ny40LDIwLjIsODUuOSwyMC4yeiIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik04OC4yLDM1LjZjLTAuMi0wLjEtMC40LTAuMS0wLjYsMEw2Ni44LDQ3LjljLTAuMiwwLjEtMC4zLDAuMy0wLjMsMC41YzAsMC4yLDAsMC40LDAuMiwwLjVsMjAuNywyMi40DQoJCWMwLjEsMC4xLDAuMywwLjIsMC41LDAuMmMwLjEsMCwwLjIsMCwwLjIsMGMwLjItMC4xLDAuNC0wLjMsMC40LTAuNlYzNi4yQzg4LjUsMzYsODguNCwzNS44LDg4LjIsMzUuNnoiLz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNjAuOCw1MS45Yy0wLjItMC4yLTAuNS0wLjMtMC44LTAuMWwtOC4zLDQuOWMtMSwwLjYtMi4yLDAuNi0zLjIsMGwtNy4zLTQuMmMtMC4yLTAuMS0wLjUtMC4xLTAuOCwwLjENCgkJTDEyLjcsNzguNGMtMC4xLDAuMS0wLjIsMC4zLTAuMiwwLjVjMCwwLjIsMC4xLDAuNCwwLjMsMC41YzAuNCwwLjMsMC44LDAuNCwxLjMsMC40aDcxLjJjMC4zLDAsMC41LTAuMiwwLjYtMC40DQoJCWMwLjEtMC4yLDAuMS0wLjUtMC4xLTAuN0w2MC44LDUxLjl6Ii8+DQoJPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTM0LjMsNDkuNmMwLjItMC4xLDAuMi0wLjMsMC4yLTAuNWMwLTAuMi0wLjEtMC40LTAuMy0wLjVMMTIuNSwzNi4xYy0wLjItMC4xLTAuNC0wLjEtMC42LDANCgkJYy0wLjIsMC4xLTAuMywwLjMtMC4zLDAuNnYzMi42YzAsMC4zLDAuMSwwLjUsMC40LDAuNmMwLjEsMCwwLjIsMC4xLDAuMywwLjFjMC4yLDAsMC4zLTAuMSwwLjQtMC4yTDM0LjMsNDkuNnoiLz4NCjwvZz4NCjwvc3ZnPg0K" alt="Email" width="32" height="32" /></a>
+
+     <a href="https://github.com/examplecode"><img class="contact-icon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwIDEwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNNTAsMTJjLTIxLjUsMC0zOSwxNy41LTM5LDM5YzAsMTcuMiwxMS4yLDMxLjgsMjYuNywzN2MyLDAuNCwyLjctMC44LDIuNy0xLjljMC0wLjksMC0zLjQtMC4xLTYuNg0KCQljLTEwLjgsMi40LTEzLjEtNS4yLTEzLjEtNS4yYy0xLjgtNC41LTQuMy01LjctNC4zLTUuN2MtMy41LTIuNCwwLjMtMi40LDAuMy0yLjRjMy45LDAuMyw2LDQsNiw0YzMuNSw2LDkuMSw0LjIsMTEuNCwzLjINCgkJYzAuNC0yLjUsMS40LTQuMiwyLjUtNS4yYy04LjctMS0xNy44LTQuMy0xNy44LTE5LjNjMC00LjMsMS41LTcuNyw0LTEwLjVjLTAuNC0xLTEuNy00LjksMC40LTEwLjNjMCwwLDMuMy0xLDEwLjcsNA0KCQljMy4xLTAuOSw2LjQtMS4zLDkuOC0xLjNjMy4zLDAsNi43LDAuNCw5LjgsMS4zYzcuNC01LDEwLjctNCwxMC43LTRjMi4xLDUuNCwwLjgsOS4zLDAuNCwxMC4zYzIuNSwyLjcsNCw2LjIsNCwxMC41DQoJCWMwLDE1LTkuMSwxOC4zLTE3LjgsMTkuMmMxLjQsMS4yLDIuNiwzLjYsMi42LDcuMmMwLDUuMiwwLDkuNCwwLDEwLjdjMCwxLDAuNywyLjMsMi43LDEuOUM3Ny44LDgyLjgsODksNjguMiw4OSw1MQ0KCQlDODksMjkuNCw3MS41LDEyLDUwLDEyeiIvPg0KPC9nPg0KPC9zdmc+DQo=" alt="GitHub" width="32" height="32" /></a>
+
+     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    </div>
+
+
+</div>
