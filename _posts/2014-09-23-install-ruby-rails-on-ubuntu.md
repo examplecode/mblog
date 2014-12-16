@@ -20,9 +20,11 @@ tags: [ruby,rails]
     rvm install 2.1.2
 
 
-## step3 安装rails
+## step3 替换默认镜像
 
 使用国内较近的镜像：替换为taobao镜像
 
     gem source -r https://rubygems.org/
     gem source -a https://ruby.taobao.org
+
+## step4 安装rails

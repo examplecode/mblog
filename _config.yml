@@ -5,10 +5,12 @@ description: "自由懒散的程序员一枚，因为懒，所以喜欢极简主
 baseurl: ""
 url: "http://examplecode.github.io"
 
+permalink: /:categories/:year/:month/:day/:title 
+
 versioin: 1.0
 
 #设置发布目录
-#destination: ../_deploy
+destination: ../_deploy
 
 # Build settings
 markdown: kramdown
