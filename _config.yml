@@ -7,6 +7,9 @@ url: "http://examplecode.github.io"
 
 versioin: 1.0
 
+#设置发布目录
+#destination: ../_deploy
+
 # Build settings
 markdown: kramdown
 #permalink: pretty
