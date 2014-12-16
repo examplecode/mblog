@@ -1,7 +1,7 @@
 # Site settings
 title: Example Code
 email: chengkai.me@gmail.com
-description: "关于我：自由懒散的程序员一枚，因为懒，所以喜欢极简主义，憎恨一切形式化的东西。不喜欢写BLOG，直到遇见了Jekyll，让我感到写文章有写代码的感觉"
+description: "自由懒散的程序员一枚，因为懒，所以喜欢极简主义，憎恨一切形式化的东西。不喜欢写BLOG，直到遇见了Jekyll，让我感到写文章有写代码的感觉"
 baseurl: ""
 url: "http://examplecode.github.io"
 
@@ -9,4 +9,5 @@ versioin: 1.0
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+#permalink: pretty
+
