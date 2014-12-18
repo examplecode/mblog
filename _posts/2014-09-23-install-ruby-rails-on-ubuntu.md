@@ -2,7 +2,7 @@
 layout: post
 title: "ubuntu下安装ruby rails环境"
 description: ""
-category: 
+category: devopt
 tags: [ruby,rails]
 ---
 
@@ -28,3 +28,5 @@ tags: [ruby,rails]
     gem source -a https://ruby.taobao.org
 
 ## step4 安装rails
+
+    gem install rails
